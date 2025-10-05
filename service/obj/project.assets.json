@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/domain.dll": {}
+        }
+      },
+      "infra/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/infra.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/infra.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "domain/1.0.0": {
+      "type": "project",
+      "path": "../domain/domain.csproj",
+      "msbuildProject": "../domain/domain.csproj"
+    },
+    "infra/1.0.0": {
+      "type": "project",
+      "path": "../infra/infra.csproj",
+      "msbuildProject": "../infra/infra.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "domain >= 1.0.0",
+      "infra >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/home/rafaeloc/.nuget/packages/": {}
@@ -31,7 +69,14 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/domain/domain.csproj": {
+              "projectPath": "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/domain/domain.csproj"
+            },
+            "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/infra/infra.csproj": {
+              "projectPath": "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/infra/infra.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
