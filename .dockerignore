@@ -1,0 +1,21 @@
+## Ignore build artifacts and local development files
+
+**/bin/
+**/obj/
+
+## Ignore user-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+## Ignore IDE-specific folders
+.vs/
+.vscode/
+
+## Ignore Git history
+.git
+.gitignore
+
+## Ignore test results and logs
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*

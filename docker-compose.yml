@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      SA_PASSWORD: "YourStrong@Password" # Replace with a strong password
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - myfinance_network
+
+  myfinance-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: myfinance-web
+    container_name: myfinance-web
+    ports:
+      - "8080:8080"
+    environment:
+      # Ensure this connection string matches your application's configuration
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=MyFinanceDb;User Id=sa;Password=YourStrong@Password;"
+    depends_on:
+      - sqlserver
+    networks:
+      - myfinance_network
+
+volumes:
+  sqlserver_data:
+
+networks:
+  myfinance_network:
+    driver: bridge
