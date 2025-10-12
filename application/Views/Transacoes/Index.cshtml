@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Transações";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<button type="button" class="btn btn-block btn-primary" onclick="Novo()">Adicionar Transação</button>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Descrição</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>#</th>
+        <th>#</th>
+    </tr>
+
+    @{
+        foreach (var item in (List<TransacaoModel>)ViewBag.ListaTransacao)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Descricao</td>
+                <td>@item.Categoria.Tipo</td>
+                <td>@item.Valor</td>
+                <td>@item.Data</td>
+                <td><button type="button" class="btn btn-clock btn-outline-warning"
+                        onclick="Atualizar(@item.Id.ToString())">Atualizar</button></td>
+                <td><button type="button" class="btn btn-clock btn-outline-danger"
+                        onclick="Excluir(@item.Id.ToString())">Excluir</button></td>
+            </tr>
+
+        }
+    }
+</table>
+
+<script>
+    function Novo() {
+        window.location.href = "../Transacoes/CadastrarAtualizar"
+    }
+
+    function Atualizar(id) {
+        window.location.href = "../Transacoes/CadastrarAtualizar/" + id
+    }
+
+    function Excluir(id) {
+        window.location.href = "../Transacoes/Excluir/" + id
+    }
+</script>

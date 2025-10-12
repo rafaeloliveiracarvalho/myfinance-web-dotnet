@@ -1,0 +1,24 @@
+@model myfinance_web_dotnet.Models.CategoriaModel
+
+@{
+    ViewData["Title"] = "Cadastrar ou Atualizar Categoria";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <form asp-controller="Categorias" asp-action="CadastrarAtualizar" asp-route-id="@Model?.Id" method="post">
+        <input type="hidden" asp-for="Id"/><br>
+
+        <label>Descrição</label>    
+        <input type="text" asp-for="Descricao"  class="form-control" /><br>
+
+        <br>
+        <label>Tipo</label><br>
+        <label>@Html.RadioButtonFor(m => m.Tipo, "R") Receita</label>
+        <label>@Html.RadioButtonFor(m => m.Tipo, "D") Despesa</label>
+        
+        <br><br>
+        <button type="submit" class="btn btn-block btn-success">Registrar</button>
+    </form>
+</div>

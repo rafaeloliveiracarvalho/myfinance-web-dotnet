@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<button type="button" class="btn btn-block btn-primary" onclick="Novo()">Criar Categoria</button>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Descrição</th>
+        <th>Tipo</th>
+        <th>#</th>
+        <th>#</th>
+    </tr>
+
+    @{
+        foreach (var item in (List<CategoriaModel>)ViewBag.ListaCategoria)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Descricao</td>
+                <td>@item.Tipo</td>
+                <td><button type="button" class="btn btn-clock btn-outline-warning"
+                        onclick="Atualizar(@item.Id.ToString())">Atualizar</button></td>
+                <td><button type="button" class="btn btn-clock btn-outline-danger"
+                        onclick="Excluir(@item.Id.ToString())">Excluir</button></td>
+            </tr>
+
+        }
+    }
+</table>
+
+<script>
+    function Novo() {
+        window.location.href = "../Categorias/CadastrarAtualizar"
+    }
+
+    function Atualizar(id) {
+        window.location.href = "../Categorias/CadastrarAtualizar/" + id
+    }
+
+    function Excluir(id) {
+        window.location.href = "../Categorias/Excluir/" + id
+    }
+</script>

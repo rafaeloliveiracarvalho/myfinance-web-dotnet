@@ -1,7 +1,15 @@
+using infra;
+using service;
+using service.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<InfraDbContext>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<ITransacaoService, TransacaoService>();
+
 
 var app = builder.Build();
 

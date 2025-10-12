@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sdXqYhPooXQ=",
+  "dgSpecHash": "tai9CSh+J1U=",
   "success": true,
-  "projectFilePath": "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/domain/domain.csproj",
+  "projectFilePath": "/src/domain/domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

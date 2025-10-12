@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/domain/domain.csproj": {}
+    "/src/domain/domain.csproj": {}
   },
   "projects": {
-    "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/domain/domain.csproj": {
+    "/src/domain/domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/domain/domain.csproj",
+        "projectUniqueName": "/src/domain/domain.csproj",
         "projectName": "domain",
-        "projectPath": "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/domain/domain.csproj",
-        "packagesPath": "/home/rafaeloc/.nuget/packages/",
-        "outputPath": "/home/rafaeloc/Estudos/PUC_Minas/13-Práticas_de_Implementação_e_Evolução_de_Software/myfinance-web-dotnet/domain/obj/",
+        "projectPath": "/src/domain/domain.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/src/domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rafaeloc/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/rafaeloc/.local/share/mise/installs/dotnet/9.0.305/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
