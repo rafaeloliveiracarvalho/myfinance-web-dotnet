@@ -1,18 +1,12 @@
 using domain.Entities;
 using infra;
-using Microsoft.EntityFrameworkCore;
 using service.Interfaces;
 
 namespace service
 {
-    public class CategoriaService : ICategoriaService
+    public class CategoriaService(InfraDbContext dbContext) : ICategoriaService
     {
-        private readonly InfraDbContext _dbContext;
-
-        public CategoriaService(InfraDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+        private readonly InfraDbContext _dbContext = dbContext;
 
         public void CadastrarAlterar(Categoria Entidade)
         {
@@ -23,13 +17,9 @@ namespace service
             }
             else
             {
-                dbSet.Attach(Entidade);
-                _dbContext.Entry(Entidade).State = EntityState.Modified;
+                dbSet.Update(Entidade);
             }
-            // else
-            // {
-            //     dbSet.Update(Entidade);
-            // }
+
 
             _dbContext.SaveChanges();
         }
